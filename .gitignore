@@ -1,0 +1,40 @@
+# Node modules and build output
+node_modules/
+dist/
+build/
+.next/
+.vite/
+
+# Logs and temp files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# IDEs/editors
+.idea/
+.vscode/
+*.sw?
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Optional: lockfiles if using specific package managers
+# Uncomment the one(s) you use, and commit them if your team wants lockfile consistency
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# Codex / GitHub Codespaces / cloud runners
+workspace/

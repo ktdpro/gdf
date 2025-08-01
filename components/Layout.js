@@ -1,0 +1,216 @@
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+import { useState, useEffect } from 'react';
+import { Icon, NavDropdown } from '../components';
+import Link from 'next/link';
+
+export default function Layout({ children }) {
+  const router = useRouter();
+  const currentPage = router.pathname;
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [mobileGuidesOpen, setMobileGuidesOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const savedMode = localStorage.getItem('darkMode');
+      return savedMode === 'true';
+    }
+    return false; // Default to light mode on server
+  });
+
+  // Effect to apply/remove 'dark' class to the root element and save preference
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      if (isDarkMode) {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('darkMode', 'true');
+      } else {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('darkMode', 'false');
+      }
+    }
+  }, [isDarkMode]);
+
+  // Scroll to top on page change and close mobile menu
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+        window.scrollTo(0, 0);
+        setIsMenuOpen(false); // Close mobile menu on navigation
+    }
+  }, [currentPage]);
+
+  const navLinks = [
+    { name: 'Home', path: '/' }, // Use / for homepage in Next.js
+    {
+      name: 'Guides',
+      children: [
+        { name: 'How to Grow', path: '/how-to-grow' },
+        { name: 'Soil Guide', path: '/soil-guide' },
+        { name: 'Fertilizing', path: '/fertilizer' },
+        { name: 'Trellis Guide', path: '/trellis-guide' },
+        { name: 'Varieties', path: '/varieties' },
+        { name: 'Pests & Diseases', path: '/pests' },
+      ]
+    },
+    { name: 'Blog', path: '/blog' },
+    { name: 'FAQs', path: '/faq' },
+    { name: 'Free Calendar', path: '/free-calendar' },
+    { name: 'About Us', path: '/about' },
+  ];
+
+  // For footer links
+  const footerNavLinks = [
+    { name: 'Home', path: '/' },
+    { name: 'How to Grow', path: '/how-to-grow' },
+    { name: 'Soil Guide', path: '/soil-guide' },
+    { name: 'Fertilizing', path: '/fertilizer' },
+    { name: 'Trellis Guide', path: '/trellis-guide' },
+    { name: 'Varieties', path: '/varieties' },
+    { name: 'Pests & Diseases', path: '/pests' },
+  ];
+
+  return (
+    <div className="bg-white dark:bg-slate-800 font-sans text-gray-800 dark:text-slate-200 transition-colors duration-300">
+      <Head>
+        {/* Global meta tags can go here */}
+        <link rel="icon" href="/favicon.ico" /> {/* Add a favicon to your public directory */}
+      </Head>
+
+      <style jsx global>{`
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .text-shadow { text-shadow: 1px 1px 3px rgba(0,0,0,0.4); }
+        .text-shadow-md { text-shadow: 2px 2px 5px rgba(0,0,0,0.5); }
+        .prose blockquote {
+            font-style: italic;
+            color: inherit;
+            border-left-width: 4px;
+            border-color: #16a34a; /* green-600 */
+            padding-left: 1em;
+        }
+        .dark .prose blockquote {
+            border-color: #22c55e; /* green-500 */
+        }
+      `}</style>
+
+      {/* Header */}
+      <header className="bg-white dark:bg-slate-800/80 dark:backdrop-blur-sm shadow-md sticky top-0 z-50 transition-colors duration-300">
+        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+          <Link href="/#main-content" className="sr-only focus:not-sr-only text-white bg-blue-600 p-2 rounded-lg">Skip to main content</Link>
+          <Link href="/" className="flex items-center gap-2 cursor-pointer">
+            <Icon name="plant" className="w-8 h-8 text-green-600 dark:text-green-400"/>
+            <span className="text-xl font-bold text-gray-900 dark:text-white">GrowingDragonFruit.com</span>
+          </Link>
+          <div className="flex items-center gap-4">
+            <nav className="hidden lg:flex items-center gap-8">
+              {navLinks.map(link => (
+                link.children ? (
+                  <NavDropdown key={link.name} item={link} currentPage={currentPage} />
+                ) : (
+                  <Link key={link.path} href={link.path} className={`pb-1 font-semibold transition-all duration-300 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${currentPage === link.path ? 'text-green-700 dark:text-green-400 border-b-2 border-green-700 dark:border-green-400' : 'text-gray-700 dark:text-slate-300 hover:text-green-700 dark:hover:text-green-400'}`}>{link.name}</Link>
+                )
+              ))}
+            </nav>
+            <button
+              onClick={() => setIsDarkMode(!isDarkMode)}
+              aria-label={`Switch to ${isDarkMode ? 'light' : 'dark'} mode`}
+              className="p-2 rounded-full bg-gray-200 dark:bg-slate-700 text-gray-700 dark:text-yellow-300 hover:bg-gray-300 dark:hover:bg-slate-600 transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+            >
+              {isDarkMode ? <Icon name="sun" className="w-5 h-5" /> : <Icon name="moon" className="w-5 h-5" />}
+            </button>
+            <div className="lg:hidden">
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                aria-label="Open mobile menu"
+                aria-expanded={isMenuOpen}
+                aria-controls="mobile-menu"
+                className="p-2 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+              >
+                <Icon name={isMenuOpen ? "x" : "menu"} className="w-8 h-8 text-gray-800 dark:text-slate-200"/>
+              </button>
+            </div>
+          </div>
+        </div>
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div id="mobile-menu" className="lg:hidden bg-white dark:bg-slate-800 shadow-xl absolute top-full left-0 w-full animate-fade-in-down">
+            <nav className="flex flex-col p-4">
+              {navLinks.map(link => {
+                if (link.children) {
+                  return (
+                    <div key={link.name}>
+                      <button
+                        onClick={() => setMobileGuidesOpen(!mobileGuidesOpen)}
+                        aria-expanded={mobileGuidesOpen}
+                        className="w-full py-3 px-4 text-left rounded-md font-semibold flex justify-between items-center text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-slate-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                      >
+                        <span>{link.name}</span>
+                        <svg className={`w-5 h-5 transition-transform duration-200 ${mobileGuidesOpen ? 'transform rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                      </button>
+                      {mobileGuidesOpen && (
+                        <div className="pl-4 border-l-2 border-gray-200 dark:border-slate-700 ml-4">
+                          {link.children.map(child => (
+                            <Link key={child.path} href={child.path} className={`w-full py-2 px-4 text-left rounded-md font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${currentPage.startsWith(child.path) ? 'bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-400' : 'text-gray-700 dark:text-slate-300 hover:bg-gray-100 dark:hover:bg-slate-700'}`}>
+                              {child.name}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  )
+                }
+                return (
+                  <Link key={link.path} href={link.path} className={`py-3 px-4 text-left rounded-md font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${currentPage === link.path ? 'bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-400' : 'text-gray-700 dark:text-slate-300 hover:bg-gray-100 dark:hover:bg-slate-700'}`}>
+                    {link.name}
+                  </Link>
+                )
+              })}
+            </nav>
+          </div>
+        )}
+      </header>
+
+      <main id="main-content">{children}</main>
+
+      {/* Footer */}
+      <footer className="bg-gray-800 text-white dark:bg-slate-900">
+        <div className="container mx-auto px-4 py-16">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <h3 className="text-lg font-bold mb-4">Quick Links</h3>
+              <ul className="space-y-2">
+                {footerNavLinks.map(link => (
+                  <li key={link.path}><Link href={link.path} className="text-gray-400 hover:text-white transition rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">{link.name}</Link></li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold mb-4">Resources</h3>
+              <ul className="space-y-2">
+                <li><Link href="/faq" className="text-gray-400 hover:text-white transition rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">FAQs</Link></li>
+                <li><Link href="/free-calendar" className="text-gray-400 hover:text-white transition rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">Free Care Calendar</Link></li>
+                <li><Link href="/blog" className="text-gray-400 hover:text-white transition rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">Blog</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold mb-4">Company</h3>
+              <ul className="space-y-2">
+                <li><Link href="/about" className="text-gray-400 hover:text-white transition rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">About Us</Link></li>
+                <li><Link href="/contact" className="text-gray-400 hover:text-white transition rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">Contact Us</Link></li>
+                <li><Link href="/privacy-policy" className="text-gray-400 hover:text-white transition rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">Privacy Policy</Link></li>{/* Add privacy policy page */}
+                <li><Link href="/terms-of-service" className="text-gray-400 hover:text-white transition rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">Terms of Service</Link></li>{/* Add terms of service page */}
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold mb-4">Our Mission</h3>
+              <p className="text-gray-400">To create an authoritative resource for DIYers and hobby gardeners interested in growing dragon fruit, empowering them to cultivate thriving plants at home.</p>
+            </div>
+          </div>
+          <div className="mt-12 border-t border-gray-700 dark:border-slate-700 pt-8 text-center text-gray-500 dark:text-slate-400">
+            <p>© {new Date().getFullYear()} GrowingDragonFruit.com. All Rights Reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
