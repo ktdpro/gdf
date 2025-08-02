@@ -7,10 +7,19 @@ import Link from 'next/link';
 const BlogIndexPage = ({ posts }) => (
     <div className="animate-fade-in">
         <Head>
-            <title>Dragon Fruit Blog | GrowingDragonFruit.com</title>
-            <meta name="description" content="Our latest tips, tricks, and stories from the world of dragon fruit cultivation." />
-            <meta property="og:title" content="Dragon Fruit Blog | GrowingDragonFruit.com" />
-            <meta property="og:description" content="Our latest tips, tricks, and stories from the world of dragon fruit cultivation." />
+            <title>The Dragon Fruit Blog: Tips, Tricks & Growing Stories</title>
+            <meta
+                name="description"
+                content="Our latest tips, tricks, and stories from the world of dragon fruit cultivation. Find answers to specific questions and follow our gardening journey."
+            />
+            <meta
+                property="og:title"
+                content="The Dragon Fruit Blog: Tips, Tricks & Growing Stories"
+            />
+            <meta
+                property="og:description"
+                content="Our latest tips, tricks, and stories from the world of dragon fruit cultivation. Find answers to specific questions and follow our gardening journey."
+            />
         </Head>
         <header className="bg-green-50 dark:bg-slate-900 py-20">
             <div className="container mx-auto px-4 text-center">

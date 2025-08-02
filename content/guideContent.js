@@ -1,6 +1,7 @@
 export const pageContent = {
     'how-to-grow': {
         title: "How to Grow Dragon Fruit: The Complete Start-to-Fruit Guide",
+        description: "Learn everything you need to know to grow dragon fruit at home, from choosing a variety and planting cuttings to pruning, pollination, and harvesting.",
         author: "Growing Dragon Fruit",
         lastUpdated: "June 28, 2025",
         crumbs: [{ label: "How to Grow", path: "how-to-grow" }],
@@ -26,7 +27,8 @@ export const pageContent = {
         cta: { heading: "Ready to Grow?", subheading: "Grab our free care calendar to stay on track!", buttonText: "Get Your Free Care Calendar" }
     },
     'soil-guide': {
-        title: "Best Soil for Dragon Fruit: The Ultimate Guide",
+        title: "Best Soil for Dragon Fruit: The Ultimate DIY Mix Guide",
+        description: "Discover the perfect DIY soil mix for your dragon fruit. Learn about drainage, pH, and the best store-bought options for containers and in-ground planting.",
         author: "Growing Dragon Fruit",
         lastUpdated: "June 28, 2025",
         crumbs: [{ label: "Soil Guide", path: "soil-guide" }],
@@ -44,7 +46,8 @@ export const pageContent = {
         cta: { heading: "Get Your Soil Right!", subheading: "Now that you have the foundation, learn how to feed your plant.", buttonText: "Learn About Fertilizing" }
     },
     'fertilizer': {
-        title: "Fertilizing Dragon Fruit for Growth & Bloom",
+        title: "Fertilizing Dragon Fruit for Growth & Bloom: A Complete Guide",
+        description: "Learn the best fertilizing schedule for dragon fruit. Understand NPK ratios, organic vs. synthetic options, and how to read your plant for deficiencies.",
         author: "Growing Dragon Fruit",
         lastUpdated: "June 28, 2025",
         crumbs: [{ label: "Fertilizer", path: "fertilizer" }],
@@ -73,7 +76,8 @@ export const pageContent = {
         cta: { heading: "Feed Your Way to a Bountiful Harvest!", subheading: "Keep your plant care on schedule with our free calendar.", buttonText: "Download Free Calendar" }
     },
     'trellis-guide': {
-        title: "Dragon Fruit Trellis & Structure Systems",
+        title: "Dragon Fruit Trellis Designs: A DIY & Training Guide",
+        description: "Explore the best trellis designs for dragon fruit, including a DIY plan for the popular post and wheel system. Learn how to train your climbing cactus for maximum fruit production.",
         author: "Growing Dragon Fruit",
         lastUpdated: "June 28, 2025",
         crumbs: [{ label: "Trellis Guide", path: "trellis-guide" }],
@@ -96,7 +100,8 @@ export const pageContent = {
         cta: { heading: "Build the Perfect Support System!", subheading: "A good trellis is a long-term investment in your plant's health.", buttonText: "Explore Dragon Fruit Varieties" }
     },
     'varieties': {
-        title: "Dragon Fruit Varieties & Reviews",
+        title: "Dragon Fruit Varieties & Reviews: From American Beauty to Yellow Dragon",
+        description: "Explore popular dragon fruit varieties like American Beauty, Sugar Dragon, and Yellow Dragon. Learn about their flavor, pollination needs, and which is right for you.",
         author: "Growing Dragon Fruit",
         lastUpdated: "June 28, 2025",
         crumbs: [{ label: "Varieties", path: "varieties" }],
@@ -114,7 +119,8 @@ export const pageContent = {
         cta: { heading: "Found Your Perfect Pitaya?", subheading: "Now learn exactly how to care for it with our complete guides.", buttonText: "Get Your Free Care Calendar" }
     },
     'pests': {
-        title: "Dragon Fruit Pests & Diseases: Identification & Control",
+        title: "Dragon Fruit Pests & Diseases: Identification & Control Guide",
+        description: "Identify and control common dragon fruit pests and diseases. Learn how to prevent root rot, stem canker, and deal with pests like mealybugs and ants.",
         author: "Growing Dragon Fruit",
         lastUpdated: "June 28, 2025",
         crumbs: [{ label: "Pests & Diseases", path: "pests" }],

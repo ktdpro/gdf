@@ -7,9 +7,15 @@ const CalendarPage = () => (
     <div className="animate-fade-in">
         <Head>
             <title>Free Dragon Fruit Care Calendar | GrowingDragonFruit.com</title>
-            <meta name="description" content="Get your free month-by-month dragon fruit care calendar to ensure abundant harvests." />
+            <meta
+                name="description"
+                content="Download our free, printable month-by-month care calendar to ensure your dragon fruit gets exactly what it needs, when it needs it."
+            />
             <meta property="og:title" content="Free Dragon Fruit Care Calendar | GrowingDragonFruit.com" />
-            <meta property="og:description" content="Get your free month-by-month dragon fruit care calendar to ensure abundant harvests." />
+            <meta
+                property="og:description"
+                content="Download our free, printable month-by-month care calendar to ensure your dragon fruit gets exactly what it needs, when it needs it."
+            />
             {/* Add more meta tags */}
         </Head>
         <div className="bg-green-50 dark:bg-slate-900">
