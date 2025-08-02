@@ -1,8 +1,6 @@
 import React from 'react';
-import Head from 'next/head';
 import { useState, useRef } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 
 // --- Helper Components & SVGs ---
 
@@ -12,6 +10,7 @@ const ImageWithFade = ({ src, alt, className }) => {
         <img
             src={src}
             alt={alt}
+            loading="lazy"
             className={`${className} transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
             onLoad={() => setIsLoaded(true)}
         />
@@ -138,6 +137,7 @@ const VideoPlayer = ({ videoId, title }) => (
             <img
                 src={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
                 alt={title}
+                loading="lazy"
                 className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
                 width={480}
                 height={360}
@@ -243,7 +243,7 @@ const ComparisonTable = ({ headers, rows }) => (
             {rows.map((row, rowIndex) => (
                 <tr key={rowIndex} className="even:bg-gray-50 dark:even:bg-slate-900/50">
                     {row.map((cell, cellIndex) => (
-                        <td key={cellIndex} className="p-4 border-t border-gray-200 dark:border-slate-700" />
+                        <td key={cellIndex} className="p-4 border-t border-gray-200 dark:border-slate-700">{cell}</td>
                     ))
 
                     }

@@ -73,6 +73,7 @@ export default function Layout({ children }) {
     <div className="bg-white dark:bg-slate-800 font-sans text-gray-800 dark:text-slate-200 transition-colors duration-300">
       <Head>
         {/* Global meta tags can go here */}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" /> {/* Add a favicon to your public directory */}
       </Head>
 
