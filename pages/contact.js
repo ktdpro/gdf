@@ -6,10 +6,16 @@ import { Icon, ImageWithFade, SchemaMarkup, AdPlaceholder, VideoPlayer, InfoCard
 const ContactPage = () => (
     <div className="animate-fade-in">
         <Head>
-            <title>Contact Us | GrowingDragonFruit.com</title>
-            <meta name="description" content="Get in touch with us! Whether you have a question, feedback, or a success story, we'd love to hear from you." />
-            <meta property="og:title" content="Contact Us | GrowingDragonFruit.com" />
-            <meta property="og:description" content="Get in touch with us! Whether you have a question, feedback, or a success story, we'd love to hear from you." />
+            <title>Contact Us - Growing Dragon Fruit</title>
+            <meta
+                name="description"
+                content="Have a question or feedback? Get in touch with the team at growingdragonfruit.com."
+            />
+            <meta property="og:title" content="Contact Us - Growing Dragon Fruit" />
+            <meta
+                property="og:description"
+                content="Have a question or feedback? Get in touch with the team at growingdragonfruit.com."
+            />
              {/* Add more meta tags */}
         </Head>
         <header className="bg-green-50 dark:bg-slate-900 py-20">

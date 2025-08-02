@@ -6,11 +6,23 @@ import { Icon, ImageWithFade, SchemaMarkup, AdPlaceholder, VideoPlayer, InfoCard
 const HomePage = () => (
     <div className="animate-fade-in">
         <Head>
-            <title>Grow Dragon Fruit at Home | GrowingDragonFruit.com</title>
-            <meta name="description" content="From Seeds to Sweet Harvests – Master Home-grown Pitaya with our guides on planting, care, soil, fertilizing, trellising, varieties, and pest control." />
-            <meta property="og:title" content="Grow Dragon Fruit at Home | GrowingDragonFruit.com" />
-            <meta property="og:description" content="From Seeds to Sweet Harvests – Master Home-grown Pitaya with our guides on planting, care, soil, fertilizing, trellising, varieties, and pest control." />
-            {/* Add more meta tags like og:image, twitter:card, etc. */}
+            <title>Growing Dragon Fruit: Your Ultimate Guide to Pitaya Cultivation</title>
+            <meta
+                name="description"
+                content="Learn how to grow dragon fruit at home with our comprehensive guides on planting, care, soil, fertilizing, trellising, varieties, and pest control."
+            />
+            <meta
+                property="og:title"
+                content="Growing Dragon Fruit: Your Ultimate Guide to Pitaya Cultivation"
+            />
+            <meta
+                property="og:description"
+                content="Learn how to grow dragon fruit at home with our comprehensive guides on planting, care, soil, fertilizing, trellising, varieties, and pest control."
+            />
+            <meta
+                property="og:image"
+                content="https://images.unsplash.com/photo-1593539138009-50811a2d677d?auto=format&fit=crop&w=1200&h=630&q=80"
+            />
         </Head>
 
         {/* Hero Section */}

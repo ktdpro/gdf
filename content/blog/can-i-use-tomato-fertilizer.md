@@ -1,8 +1,8 @@
 ---
-title: "Can I Use Tomato Fertilizer on My Dragon Fruit?"
+title: "Can I Use Tomato Fertilizer on Dragon Fruit? An NPK Guide"
 date: "2025-06-20"
 author: "Growing Dragon Fruit"
-summary: "You have some tomato food lying around and your dragon fruit looks hungry. Can you use it? We break down the NPK numbers and tell you when it's okay and when it's a bad idea."
+summary: "Have some tomato food lying around? We break down the NPK numbers and explain when it's okay to use tomato fertilizer on your dragon fruit, and when it's a bad idea."
 featuredImage: "/images/tomato-fertilizer.jpg"
 relatedPillar: "fertilizer"
 pillarTitle: "Fertilizing Guide"

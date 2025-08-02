@@ -1,8 +1,8 @@
 ---
-title: "5 Signs You're Overwatering Your Dragon Fruit"
+title: "5 Signs You're Overwatering Your Dragon Fruit Plant"
 date: "2025-08-01"
 author: "Growing Dragon Fruit"
-summary: "Overwatering is the #1 killer of dragon fruit plants. Learn to recognize the subtle signs before it's too late, from yellowing stems to a lack of new growth."
+summary: "Overwatering is the #1 killer of dragon fruit. Learn to recognize the subtle signs before it's too late, from yellowing stems to a lack of new growth."
 featuredImage: "/images/dragonfruit-cutting.jpg"
 relatedPillar: "pests"
 pillarTitle: "Pests & Diseases Guide"

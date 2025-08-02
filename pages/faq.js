@@ -96,10 +96,19 @@ const FaqPage = ({ faqs }) => { // Use the faqs prop
     return (
         <div className="animate-fade-in">
             <Head>
-                <title>Frequently Asked Questions | GrowingDragonFruit.com</title>
-                <meta name="description" content="Quick answers to your most common dragon fruit questions." />
-                 <meta property="og:title" content="Frequently Asked Questions | GrowingDragonFruit.com" />
-                <meta property="og:description" content="Quick answers to your most common dragon fruit questions." />
+                <title>FAQs: Your Dragon Fruit Questions Answered</title>
+                <meta
+                    name="description"
+                    content="Find quick answers to the most common questions about growing dragon fruit, from watering and fertilizing to pollination and troubleshooting."
+                />
+                <meta
+                    property="og:title"
+                    content="FAQs: Your Dragon Fruit Questions Answered"
+                />
+                <meta
+                    property="og:description"
+                    content="Find quick answers to the most common questions about growing dragon fruit, from watering and fertilizing to pollination and troubleshooting."
+                />
                  {/* Add more meta tags */}
             </Head>
             <header className="bg-green-50 dark:bg-slate-900 py-20">

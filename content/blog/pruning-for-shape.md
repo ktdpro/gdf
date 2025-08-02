@@ -1,8 +1,8 @@
 ---
-title: "A Step-by-Step Guide to Your First Pruning"
+title: "A Step-by-Step Guide to Your First Dragon Fruit Pruning"
 date: "2025-06-15"
 author: "Growing Dragon Fruit"
-summary: "Pruning can be intimidating, but it's the key to a productive plant. We'll walk you through the first 'apical cut' to create the perfect umbrella shape for your dragon fruit."
+summary: "Pruning can be intimidating, but it's the key to a productive plant. We'll walk you through the first 'apical cut' to create the perfect umbrella shape."
 featuredImage: "/images/pruning-top.jpg"
 relatedPillar: "trellis-guide"
 pillarTitle: "Trellis & Structure Guide"

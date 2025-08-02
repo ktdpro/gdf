@@ -72,7 +72,25 @@ export default function Layout({ children }) {
   return (
     <div className="bg-white dark:bg-slate-800 font-sans text-gray-800 dark:text-slate-200 transition-colors duration-300">
       <Head>
-        {/* Global meta tags can go here */}
+        <title>Pitaya Dragonfruit Mastery: Expert Guides & Tips for Growing Sweet Success</title>
+        <meta
+          name="description"
+          content="Unlock the secrets to thriving pitaya dragonfruit gardens. Learn planting, care, harvesting, and pest control strategies—plus essential pitaya cultivation tips."
+        />
+        <meta
+          name="keywords"
+          content="pitaya dragonfruit, growing dragonfruit, pitaya cultivation tips, dragonfruit care and maintenance, pitaya farm, pitaya varieties, best soil for pitaya, dragonfruit trellis ideas, pitaya fertilization schedule, organic pitaya farming, how to grow pitaya dragonfruit from cuttings, best climate for pitaya production, pitaya irrigation and watering tips, dragonfruit pest and disease control, pitaya dragonfruit nutritional benefits"
+        />
+        <meta
+          property="og:title"
+          content="Pitaya Dragonfruit Mastery: Expert Guides & Tips for Growing Sweet Success"
+        />
+        <meta
+          property="og:description"
+          content="Unlock the secrets to thriving pitaya dragonfruit gardens. Learn planting, care, harvesting, and pest control strategies—plus essential pitaya cultivation tips."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Pitaya Dragonfruit Mastery" />
         <link rel="icon" href="/favicon.ico" /> {/* Add a favicon to your public directory */}
       </Head>
 

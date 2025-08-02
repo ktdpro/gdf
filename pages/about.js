@@ -6,10 +6,16 @@ import { Icon, ImageWithFade, SchemaMarkup, AdPlaceholder, VideoPlayer, InfoCard
 const AboutPage = () => (
     <div className="animate-fade-in">
          <Head>
-            <title>About Us | GrowingDragonFruit.com</title>
-            <meta name="description" content="Learn about our passion for dragon fruit and our mission to help you cultivate thriving plants at home." />
-             <meta property="og:title" content="About Us | GrowingDragonFruit.com" />
-            <meta property="og:description" content="Learn about our passion for dragon fruit and our mission to help you cultivate thriving plants at home." />
+            <title>About Us - Growing Dragon Fruit</title>
+            <meta
+                name="description"
+                content="Learn about the mission and passion behind growingdragonfruit.com, your go-to resource for cultivating pitaya at home."
+            />
+            <meta property="og:title" content="About Us - Growing Dragon Fruit" />
+            <meta
+                property="og:description"
+                content="Learn about the mission and passion behind growingdragonfruit.com, your go-to resource for cultivating pitaya at home."
+            />
              {/* Add more meta tags */}
         </Head>
         <header className="bg-green-50 dark:bg-slate-900 py-20">

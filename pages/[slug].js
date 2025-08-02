@@ -6,13 +6,15 @@ import { useState } from 'react'; // Keep useState for Accordion
 import { Icon, ImageWithFade, SchemaMarkup, AdPlaceholder, VideoPlayer, InfoCard, Breadcrumbs, NavDropdown, ComparisonTable } from '../components';
 import React from 'react'; // Import React for JSX in AccordionItem
 
-const PillarPage = ({ pageData }) => (
+const PillarPage = ({ pageData }) => {
+    const metaDescription = pageData.description || (pageData.content[0]?.paragraphs[0]?.substring(0, 150) + '...');
+    return (
     <div className="animate-fade-in">
         <Head>
             <title>{`${pageData.title} | GrowingDragonFruit.com`}</title>
-            <meta name="description" content={pageData.content[0]?.paragraphs[0]?.substring(0, 150) + '...'} />
+            <meta name="description" content={metaDescription} />
             <meta property="og:title" content={pageData.title} />
-            <meta property="og:description" content={pageData.content[0]?.paragraphs[0]?.substring(0, 150) + '...'} />
+            <meta property="og:description" content={metaDescription} />
             {/* Add more meta tags like og:image, twitter:card, etc. */}
         </Head>
         {/* Hero Section */}
@@ -130,7 +132,8 @@ const PillarPage = ({ pageData }) => (
         )}
 
     </div>
-);
+    );
+};
 
 // Helper component for Accordion (moved from faq.js)
 const AccordionItem = ({ index, title, children }) => {
