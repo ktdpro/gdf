@@ -155,7 +155,7 @@ export default function Layout({ children }) {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div id="mobile-menu" className="lg:hidden bg-white dark:bg-slate-800 shadow-xl absolute top-full left-0 w-full animate-fade-in-down">
-            <nav className="flex flex-col p-4">
+            <nav className="flex flex-col p-4 space-y-1">
               {navLinks.map(link => {
                 if (link.children) {
                   return (
@@ -169,9 +169,13 @@ export default function Layout({ children }) {
                         <svg className={`w-5 h-5 transition-transform duration-200 ${mobileGuidesOpen ? 'transform rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
                       </button>
                       {mobileGuidesOpen && (
-                        <div className="pl-4 border-l-2 border-gray-200 dark:border-slate-700 ml-4">
+                        <div className="flex flex-col space-y-1 pl-4 ml-4 border-l-2 border-gray-200 dark:border-slate-700">
                           {link.children.map(child => (
-                            <Link key={child.path} href={child.path} className={`w-full py-2 px-4 text-left rounded-md font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${currentPage.startsWith(child.path) ? 'bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-400' : 'text-gray-700 dark:text-slate-300 hover:bg-gray-100 dark:hover:bg-slate-700'}`}>
+                            <Link
+                              key={child.path}
+                              href={child.path}
+                              className={`block w-full py-2 px-4 text-left rounded-md font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${currentPage.startsWith(child.path) ? 'bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-400' : 'text-gray-700 dark:text-slate-300 hover:bg-gray-100 dark:hover:bg-slate-700'}`}
+                            >
                               {child.name}
                             </Link>
                           ))}
@@ -181,7 +185,11 @@ export default function Layout({ children }) {
                   )
                 }
                 return (
-                  <Link key={link.path} href={link.path} className={`py-3 px-4 text-left rounded-md font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${currentPage === link.path ? 'bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-400' : 'text-gray-700 dark:text-slate-300 hover:bg-gray-100 dark:hover:bg-slate-700'}`}>
+                  <Link
+                    key={link.path}
+                    href={link.path}
+                    className={`block py-3 px-4 text-left rounded-md font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${currentPage === link.path ? 'bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-400' : 'text-gray-700 dark:text-slate-300 hover:bg-gray-100 dark:hover:bg-slate-700'}`}
+                  >
                     {link.name}
                   </Link>
                 )
