@@ -32,15 +32,6 @@ const AboutPage = () => (
 
                 <h2 className="font-bold text-3xl text-gray-900 dark:text-white mt-16">Why We Chose Dragon Fruit</h2>
                 <p>In a world of tomatoes and cucumbers, why dedicate a whole site to dragon fruit? Because we believe it's a special plant. It's a conversation starter, a piece of living architecture, and a producer of fruit that looks like a jewel and tastes like a tropical getaway. It connects us to a more exotic world of gardening and challenges us to learn new skills. We love its night-blooming flowers, which open for a single evening in a spectacular display. We love the thrill of seeing the first fruitlets form and watching them swell into vibrant pinks, reds, and yellows. This isn't just about gardening; it's about cultivating something truly extraordinary.</p>
-
-                <h2 className="font-bold text-3xl text-gray-900 dark:text-white mt-16">Meet the Grower</h2>
-                <div className="flex flex-col sm:flex-row items-center gap-8 mt-8 bg-gray-50 dark:bg-slate-700 p-8 rounded-lg">
-                    <ImageWithFade src="https://placehold.co/150x150/A7F3D0/14532D?text=Team+Photo+(150x150)" className="rounded-full w-32 h-32 object-cover" alt="Founder"/>
-                    <div>
-                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Growing Dragon Fruit Team</h3>
-                        <p className="text-gray-800 dark:text-slate-200">Our team is a small group of passionate horticulturists, former engineers, and weekend gardeners who started with a single, sad-looking dragon fruit cutting and now manage a small urban orchard of over 15 different varieties. Our goal is to blend a data-driven, experimental approach with traditional gardening wisdom to find what truly works. We're the ones in the dirt every day, testing soil mixes, tweaking fertilizer ratios, and documenting every success and failure to share with you here.</p>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
