@@ -18,14 +18,17 @@ export default function Layout({ children }) {
     return false; // Default to light mode on server
   });
 
-  // Effect to apply/remove 'dark' class to the root element and save preference
+  // Effect to apply/remove theme classes on the root element and save preference
   useEffect(() => {
     if (typeof window !== 'undefined') {
+      const root = document.documentElement;
       if (isDarkMode) {
-        document.documentElement.classList.add('dark');
+        root.classList.add('dark');
+        root.classList.remove('light');
         localStorage.setItem('darkMode', 'true');
       } else {
-        document.documentElement.classList.remove('dark');
+        root.classList.remove('dark');
+        root.classList.add('light');
         localStorage.setItem('darkMode', 'false');
       }
     }
