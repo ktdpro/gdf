@@ -56,11 +56,14 @@ const PillarPage = ({ pageData }) => {
                             <React.Fragment key={index}>
                                 <div id={`section-${index}`} className="mb-12">
                                      {section.heading && <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6 pt-4 border-t-4 border-pink-400 dark:border-pink-500">{section.heading}</h2>}
-                                    {section.paragraphs && section.paragraphs.map((p, pIndex) => (
-                                        // Render paragraphs as plain text within <p> tags
-                                        // We'll handle blockquotes and other HTML later with a structured approach
-                                        <p key={pIndex} className="mb-4">{p}</p>
-                                    ))}
+                                    {section.paragraphs &&
+                                        section.paragraphs.map((p, pIndex) => (
+                                            <div
+                                                key={pIndex}
+                                                className="mb-4"
+                                                dangerouslySetInnerHTML={{ __html: p }}
+                                            />
+                                        ))}
                                     {section.table && <ComparisonTable headers={section.table.headers} rows={section.table.rows} />}
                                     {section.image && <ImageWithFade src={section.image} alt={section.heading} className="rounded-lg shadow-md my-8" />}
                                     {section.video && <VideoPlayer videoId={section.video.id} title={section.video.title} />}
@@ -163,9 +166,10 @@ const AccordionItem = ({ index, title, children }) => {
                 className={`grid overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
             >
                 <div className="overflow-hidden">
-                    <div className="p-6 text-gray-800 dark:text-slate-300 leading-relaxed">
-                        {children}
-                    </div>
+                    <div
+                        className="p-6 text-gray-800 dark:text-slate-300 leading-relaxed"
+                        dangerouslySetInnerHTML={{ __html: children }}
+                    />
                 </div>
             </div>
         </div>

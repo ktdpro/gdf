@@ -39,7 +39,10 @@ const BlogIndexPage = ({ posts }) => (
                                 <p className="text-sm text-gray-600 dark:text-slate-400 mb-4">
                                     By <span className="font-semibold text-pink-600 dark:text-pink-400">{post.author}</span> on {post.date}
                                 </p>
-                                <p className="text-gray-800 dark:text-slate-300 mb-6">{post.summary}</p>
+                                <div
+                                    className="text-gray-800 dark:text-slate-300 mb-6"
+                                    dangerouslySetInnerHTML={{ __html: post.summary }}
+                                />
                             </div>
                         </Link>
                     ))}
