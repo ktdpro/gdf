@@ -10,26 +10,13 @@ export default function Layout({ children }) {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mobileGuidesOpen, setMobileGuidesOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const savedMode = localStorage.getItem('darkMode');
-      return savedMode === 'true';
-    }
-    return false; // Default to light mode on server
-  });
-
-  // Effect to apply/remove 'dark' class to the root element and save preference
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      if (isDarkMode) {
-        document.documentElement.classList.add('dark');
-        localStorage.setItem('darkMode', 'true');
-      } else {
-        document.documentElement.classList.remove('dark');
-        localStorage.setItem('darkMode', 'false');
-      }
+      const root = document.documentElement;
+      root.classList.add('dark');
+      root.classList.remove('light');
     }
-  }, [isDarkMode]);
+  }, []);
 
   // Scroll to top on page change and close mobile menu
   useEffect(() => {
@@ -129,13 +116,6 @@ export default function Layout({ children }) {
                 )
               ))}
             </nav>
-            <button
-              onClick={() => setIsDarkMode(!isDarkMode)}
-              aria-label={`Switch to ${isDarkMode ? 'light' : 'dark'} mode`}
-              className="p-2 rounded-full bg-gray-200 dark:bg-slate-700 text-gray-700 dark:text-yellow-300 hover:bg-gray-300 dark:hover:bg-slate-600 transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
-            >
-              {isDarkMode ? <Icon name="sun" className="w-5 h-5" /> : <Icon name="moon" className="w-5 h-5" />}
-            </button>
             <div className="lg:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
