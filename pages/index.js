@@ -26,7 +26,8 @@ const HomePage = () => (
         </Head>
 
         {/* Hero Section */}
-        <section className="relative text-center text-white py-24 md:py-40 px-4 bg-cover bg-center" style={{backgroundImage: `url('https://images.unsplash.com/photo-1593539138009-50811a2d677d?q=80&w=2940&auto=format&fit=crop')`}}>
+        <section className="relative text-center text-white py-24 md:py-40 px-4 bg-cover bg-center" style={{ backgroundImage: "url('/images/dragonfruit-hero.jpg')" }}
+        >
             <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/30"></div>
             <div className="relative z-10">
                 <h1 className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight text-shadow-md">Grow Dragon Fruit at Home</h1>
