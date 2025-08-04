@@ -43,12 +43,12 @@ const BlogPostPage = ({ postData, contentHtml }) => (
       )}
     </Head>
 
-    <header className="bg-green-50 dark:bg-slate-900 py-20">
+    <header className="bg-gradient-to-r from-brand-light to-brand/20 dark:from-brand-dark dark:to-brand py-20">
       <div className="container mx-auto px-4 max-w-4xl">
         <Breadcrumbs crumbs={[{ label: 'Blog', path: '/blog' }, { label: postData.title }]} />
-        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white">{postData.title}</h1>
-        <p className="mt-4 text-gray-600 dark:text-slate-400">
-          By <span className="font-semibold text-pink-600 dark:text-pink-400">{postData.author}</span> | Published on {postData.date}
+        <h1 className="text-4xl md:text-5xl font-extrabold text-brand-dark dark:text-white">{postData.title}</h1>
+        <p className="mt-4 text-brand-dark/80 dark:text-slate-400">
+          By <span className="font-semibold text-accent">{postData.author}</span> | Published on {postData.date}
         </p>
       </div>
     </header>
@@ -59,14 +59,14 @@ const BlogPostPage = ({ postData, contentHtml }) => (
       </div>
 
       {postData.relatedPillar && (
-        <div className="mt-12 p-6 bg-green-50 dark:bg-green-900/20 rounded-lg border-l-4 border-green-500">
-          <h3 className="text-xl font-bold text-gray-900 dark:text-white">Read the Full Guide</h3>
-          <p className="mt-2 text-gray-800 dark:text-slate-200">
+        <div className="mt-12 p-6 bg-brand-light dark:bg-brand-dark/20 rounded-lg border-l-4 border-brand">
+          <h3 className="text-xl font-bold text-brand-dark dark:text-white">Read the Full Guide</h3>
+          <p className="mt-2 text-brand-dark/80 dark:text-slate-200">
             This article is part of our comprehensive pillar content. For even more detail, check out our full guide.
           </p>
           <Link
             href={`/${postData.relatedPillar}`}
-            className="mt-4 inline-block text-green-700 dark:text-green-400 font-bold hover:text-green-800 dark:hover:text-green-300 transition-colors duration-300 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
+            className="mt-4 inline-block text-accent font-bold hover:text-brand-dark dark:hover:text-white transition-colors duration-300 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
           >
             Go to {postData.pillarTitle} →
           </Link>

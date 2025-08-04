@@ -50,7 +50,7 @@ export default function Layout({ children }) {
   ];
 
   return (
-    <div className="bg-white dark:bg-slate-800 font-sans text-gray-800 dark:text-slate-200 transition-colors duration-300">
+    <div className="font-sans text-gray-800 dark:text-slate-200 transition-colors duration-300">
       <Head>
         <title>Pitaya Dragonfruit Mastery: Expert Guides & Tips for Growing Sweet Success</title>
         <meta
@@ -92,12 +92,12 @@ export default function Layout({ children }) {
       `}</style>
 
       {/* Header */}
-      <header className="bg-white dark:bg-slate-800/80 dark:backdrop-blur-sm shadow-md sticky top-0 z-50 transition-colors duration-300">
+      <header className="bg-gradient-to-r from-brand-dark to-brand text-white shadow-md sticky top-0 z-50 transition-colors duration-300">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <Link href="/#main-content" className="sr-only focus:not-sr-only text-white bg-blue-600 p-2 rounded-lg">Skip to main content</Link>
+          <Link href="/#main-content" className="sr-only focus:not-sr-only text-white bg-brand p-2 rounded-lg focus-visible:ring-2 focus-visible:ring-accent">Skip to main content</Link>
           <Link href="/" className="flex items-center gap-2 cursor-pointer">
-            <Icon name="plant" className="w-8 h-8 text-green-600 dark:text-green-400"/>
-            <span className="text-xl font-bold text-gray-900 dark:text-white">GrowingDragonFruit.com</span>
+            <Icon name="plant" className="w-8 h-8 text-accent"/>
+            <span className="text-xl font-bold text-white">GrowingDragonFruit.com</span>
           </Link>
           <div className="flex items-center gap-4">
             <nav className="hidden lg:flex items-center gap-8">
@@ -105,7 +105,7 @@ export default function Layout({ children }) {
                 link.children ? (
                   <NavDropdown key={link.name} item={link} currentPage={currentPage} />
                 ) : (
-                  <Link key={link.path} href={link.path} className={`pb-1 font-semibold transition-all duration-300 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${currentPage === link.path ? 'text-green-700 dark:text-green-400 border-b-2 border-green-700 dark:border-green-400' : 'text-gray-700 dark:text-slate-300 hover:text-green-700 dark:hover:text-green-400'}`}>{link.name}</Link>
+                  <Link key={link.path} href={link.path} className={`pb-1 font-semibold transition-all duration-300 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-accent ${currentPage === link.path ? 'text-accent border-b-2 border-accent' : 'text-white hover:text-accent'}`}>{link.name}</Link>
                 )
               ))}
             </nav>
@@ -115,16 +115,16 @@ export default function Layout({ children }) {
                 aria-label="Open mobile menu"
                 aria-expanded={isMenuOpen}
                 aria-controls="mobile-menu"
-                className="p-2 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                className="p-2 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
               >
-                <Icon name={isMenuOpen ? "x" : "menu"} className="w-8 h-8 text-gray-800 dark:text-slate-200"/>
+                <Icon name={isMenuOpen ? "x" : "menu"} className="w-8 h-8 text-white"/>
               </button>
             </div>
           </div>
         </div>
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div id="mobile-menu" className="lg:hidden bg-white dark:bg-slate-800 shadow-xl absolute top-full left-0 w-full animate-fade-in-down">
+          <div id="mobile-menu" className="lg:hidden bg-brand-dark text-white shadow-xl absolute top-full left-0 w-full animate-fade-in-down">
             <nav className="flex flex-col p-4 space-y-1">
               {navLinks.map(link => {
                 if (link.children) {
@@ -133,18 +133,18 @@ export default function Layout({ children }) {
                       <button
                         onClick={() => setMobileGuidesOpen(!mobileGuidesOpen)}
                         aria-expanded={mobileGuidesOpen}
-                        className="w-full py-3 px-4 text-left rounded-md font-semibold flex justify-between items-center text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-slate-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                        className="w-full py-3 px-4 text-left rounded-md font-semibold flex justify-between items-center hover:bg-brand focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
                       >
                         <span>{link.name}</span>
                         <svg className={`w-5 h-5 transition-transform duration-200 ${mobileGuidesOpen ? 'transform rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
                       </button>
                       {mobileGuidesOpen && (
-                        <div className="flex flex-col space-y-1 pl-4 ml-4 border-l-2 border-gray-200 dark:border-slate-700">
+                        <div className="flex flex-col space-y-1 pl-4 ml-4 border-l-2 border-brand">
                           {link.children.map(child => (
                             <Link
                               key={child.path}
                               href={child.path}
-                              className={`block w-full py-2 px-4 text-left rounded-md font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${currentPage.startsWith(child.path) ? 'bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-400' : 'text-gray-700 dark:text-slate-300 hover:bg-gray-100 dark:hover:bg-slate-700'}`}
+                              className={`block w-full py-2 px-4 text-left rounded-md font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-accent ${currentPage.startsWith(child.path) ? 'bg-brand-light text-brand-dark' : 'hover:bg-brand text-white'}`}
                             >
                               {child.name}
                             </Link>
@@ -158,7 +158,7 @@ export default function Layout({ children }) {
                   <Link
                     key={link.path}
                     href={link.path}
-                    className={`block py-3 px-4 text-left rounded-md font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${currentPage === link.path ? 'bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-400' : 'text-gray-700 dark:text-slate-300 hover:bg-gray-100 dark:hover:bg-slate-700'}`}
+                    className={`block py-3 px-4 text-left rounded-md font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-accent ${currentPage === link.path ? 'bg-brand-light text-brand-dark' : 'hover:bg-brand text-white'}`}
                   >
                     {link.name}
                   </Link>
@@ -172,32 +172,32 @@ export default function Layout({ children }) {
       <main id="main-content">{children}</main>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white dark:bg-slate-900">
+      <footer className="bg-brand-dark text-white">
         <div className="container mx-auto px-4 py-16">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <h3 className="text-lg font-bold mb-4">Quick Links</h3>
               <ul className="space-y-2">
                 {footerNavLinks.map(link => (
-                  <li key={link.path}><Link href={link.path} className="text-gray-400 hover:text-white transition rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">{link.name}</Link></li>
+                  <li key={link.path}><Link href={link.path} className="text-gray-200 hover:text-white transition rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">{link.name}</Link></li>
                 ))}
               </ul>
             </div>
             <div>
               <h3 className="text-lg font-bold mb-4">Resources</h3>
               <ul className="space-y-2">
-                <li><Link href="/faq" className="text-gray-400 hover:text-white transition rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">FAQs</Link></li>
-                <li><Link href="/free-calendar" className="text-gray-400 hover:text-white transition rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">Free Care Calendar</Link></li>
-                <li><Link href="/blog" className="text-gray-400 hover:text-white transition rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">Blog</Link></li>
+                <li><Link href="/faq" className="text-gray-200 hover:text-white transition rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">FAQs</Link></li>
+                <li><Link href="/free-calendar" className="text-gray-200 hover:text-white transition rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">Free Care Calendar</Link></li>
+                <li><Link href="/blog" className="text-gray-200 hover:text-white transition rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">Blog</Link></li>
               </ul>
             </div>
             <div>
               <h3 className="text-lg font-bold mb-4">Company</h3>
               <ul className="space-y-2">
-                <li><Link href="/about" className="text-gray-400 hover:text-white transition rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">About Us</Link></li>
-                <li><Link href="/contact" className="text-gray-400 hover:text-white transition rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">Contact Us</Link></li>
-                <li><Link href="/privacy-policy" className="text-gray-400 hover:text-white transition rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">Privacy Policy</Link></li>{/* Add privacy policy page */}
-                <li><Link href="/terms-of-service" className="text-gray-400 hover:text-white transition rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">Terms of Service</Link></li>{/* Add terms of service page */}
+                <li><Link href="/about" className="text-gray-200 hover:text-white transition rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">About Us</Link></li>
+                <li><Link href="/contact" className="text-gray-200 hover:text-white transition rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">Contact Us</Link></li>
+                <li><Link href="/privacy-policy" className="text-gray-200 hover:text-white transition rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">Privacy Policy</Link></li>{/* Add privacy policy page */}
+                <li><Link href="/terms-of-service" className="text-gray-200 hover:text-white transition rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">Terms of Service</Link></li>{/* Add terms of service page */}
               </ul>
             </div>
             <div>

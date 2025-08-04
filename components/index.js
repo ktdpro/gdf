@@ -167,14 +167,14 @@ const InfoCard = ({ icon, title, description, buttonText, linkPath }) => (
 // Breadcrumbs component for navigation context
 const Breadcrumbs = ({ crumbs }) => (
     <nav aria-label="Breadcrumb" className="flex items-center text-sm text-gray-600 dark:text-slate-400 mb-4">
-        <Link href="/" className="hover:text-green-700 dark:hover:text-green-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded">Home</Link>
+        <Link href="/" className="hover:text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded">Home</Link>
         {crumbs.map((crumb, index) => (
             <React.Fragment key={index}>
                 <Icon name="chevronRight" className="w-4 h-4 mx-1" />
                 {index === crumbs.length - 1 ? (
                     <span className="font-semibold text-gray-800 dark:text-white" aria-current="page">{crumb.label}</span>
                 ) : (
-                    <Link href={crumb.path} className=" dark:hover:text-green-400 hover:text-green-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded">{crumb.label}</Link>
+                    <Link href={crumb.path} className="hover:text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded">{crumb.label}</Link>
                 )}
             </React.Fragment>
         ))}
@@ -200,7 +200,7 @@ const NavDropdown = ({ item, currentPage }) => {
                 aria-haspopup="true"
                 aria-expanded={isOpen}
                 onClick={() => setIsOpen(!isOpen)}
-                className={`pb-1 font-semibold transition-all duration-300 flex items-center gap-1 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${isChildActive ? 'text-green-600 dark:text-green-400 border-b-2 border-green-600 dark:border-green-400' : 'text-gray-700 dark:text-slate-300 hover:text-green-600 dark:hover:text-green-400'}`}
+                className={`pb-1 font-semibold transition-all duration-300 flex items-center gap-1 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-accent ${isChildActive ? 'text-accent border-b-2 border-accent' : 'text-white hover:text-accent'}`}
             >
                 {item.name}
                 <svg className={`w-4 h-4 transition-transform duration-200 ${isOpen ? 'transform rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
@@ -210,14 +210,14 @@ const NavDropdown = ({ item, currentPage }) => {
                     role="menu"
                     aria-orientation="vertical"
                     aria-labelledby="guides-menu-button"
-                    className="absolute left-0 top-full mt-0 pt-2 w-56 bg-white dark:bg-slate-800 rounded-b-lg shadow-xl py-2 z-50 animate-fade-in-down"
+                    className="absolute left-0 top-full mt-0 pt-2 w-56 bg-brand-dark text-white rounded-b-lg shadow-xl py-2 z-50 animate-fade-in-down"
                 >
                     {item.children.map(child => (
                         <Link
                             key={child.path}
                             href={child.path}
                             role="menuitem"
-                            className={`w-full text-left block px-4 py-2 text-gray-800 dark:text-slate-200 hover:bg-green-50 dark:hover:bg-green-900/50 hover:text-green-700 dark:hover:text-green-400 transition-colors duration-200 focus:outline-none focus-visible:bg-green-100 dark:focus-visible:bg-green-900 ${currentPage.startsWith(child.path) ? 'font-bold text-green-700 dark:text-green-400' : ''}`}
+                            className={`w-full text-left block px-4 py-2 text-white hover:bg-brand transition-colors duration-200 focus:outline-none focus-visible:bg-brand-light ${currentPage.startsWith(child.path) ? 'font-bold bg-brand-light text-brand-dark' : ''}`}
                         >
                             {child.name}
                         </Link>
