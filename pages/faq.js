@@ -3,7 +3,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react'; // Keep useState for Accordion
 import { Icon, ImageWithFade, SchemaMarkup, AdPlaceholder, VideoPlayer, InfoCard, Breadcrumbs, NavDropdown, ComparisonTable } from '../components';
-// import { pageContent } from '../content/guideContent'; // No longer needed if data is here
 
 // FAQs Data
 const faqs = [

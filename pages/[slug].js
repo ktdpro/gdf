@@ -1,4 +1,4 @@
-import { pageContent } from '../content/guideContent';
+import { pageContent } from '../content';
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
