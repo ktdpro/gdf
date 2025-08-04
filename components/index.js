@@ -243,10 +243,13 @@ const ComparisonTable = ({ headers, rows }) => (
             {rows.map((row, rowIndex) => (
                 <tr key={rowIndex} className="even:bg-gray-50 dark:even:bg-slate-900/50">
                     {row.map((cell, cellIndex) => (
-                        <td key={cellIndex} className="p-4 border-t border-gray-200 dark:border-slate-700" />
-                    ))
-
-                    }
+                        <td
+                            key={cellIndex}
+                            className="p-4 border-t border-gray-200 dark:border-slate-700"
+                        >
+                            {cell}
+                        </td>
+                    ))}
                 </tr>
             ))}
             </tbody>
