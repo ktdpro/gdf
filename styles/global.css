@@ -2,3 +2,16 @@
 
 /* Add any other global styles here */
 
+@layer base {
+  a {
+    @apply text-blue-700 underline dark:text-blue-400;
+  }
+
+  a:hover {
+    @apply text-blue-900 dark:text-blue-300;
+  }
+
+  a:visited {
+    @apply text-purple-700 dark:text-purple-400;
+  }
+}
